@@ -114,6 +114,29 @@ var foo = function (bar) {
 console.log(foo(5));
 ```
 
+``` cpp
+
+#include <stdio.h>;
+
+// Comment
+class OneClass {
+  private: 
+  int prop;
+
+  constructor() {
+
+  }
+
+  public:
+  doSomthing() {
+
+  } 
+}
+
+myClass = new OneCLass()
+
+```
+
 &nbsp;  
 
 ### **Tables**
