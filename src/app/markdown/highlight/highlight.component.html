@@ -1,0 +1,13 @@
+
+<!-- Loops on highligh tokens -->
+<ng-container *ngFor="let token of tokens">
+
+  <!-- Renders plain strings as text nodes -->
+  <ng-container *ngIf="isString(token);else spanToken">{{ token }}</ng-container>
+
+  <!-- Renders the token within a span element with the proper highligh class otherwise -->
+  <ng-template #spanToken>
+    <span [class]="'token '+token.type">{{ token?.content }}</span>
+  </ng-template>
+
+</ng-container>
