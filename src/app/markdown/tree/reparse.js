@@ -1,6 +1,6 @@
 /**
  * @module reparse
- * @version 0.0.1
+ * @version 0.0.2
  * @author Lucio Francisco
  * @description Hacks the unified/remark node modules to work as a markdown parser in a browser, the parser turns the input text into a MDAST syntaxt tree @see {https://github.com/remarkjs/remark}
  */
