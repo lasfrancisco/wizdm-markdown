@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MarkdownRoot } from './markdown.component';
 import { MarkdownBlock } from './block/block.component';
 import { MarkdownInline } from './inline/inline.component';
-import { PrismModule } from './prism/prism.module';
+import { PrismModule } from '../prism/prism.module';
 import { MarkdownConfig, mdConfigToken } from './tree/tree-config';
 
 @NgModule({
