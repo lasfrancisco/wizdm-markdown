@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PrismHighlihter, PrismTokenizer } from './prism.component';
+import { PrismHighlihter } from './highlighter/highlighter.component';
+import { PrismTokenizer } from './tokenizer/tokenizer.component';
 
 @NgModule({
   imports: [
