@@ -10,10 +10,12 @@ import { MarkdownTree } from '../tree/tree.service';
 })
 /** Renders a markdown text into an angular view */
 export class MarkdownBlock {
+
+  @Input('wm-block') node: mdContent;
   
   constructor(readonly tree: MarkdownTree) {}
 
-  @Input('wm-block') node: mdContent;
+  get highlight() { return !!this.tree.config && !!this.tree.config.prism; }
 
   // Table of content anchor helper
   public toc(heading: mdHeading): string {

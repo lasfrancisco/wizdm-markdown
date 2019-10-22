@@ -15,7 +15,7 @@ export class PrismHighlihter {
   }
   
   /** Disables the highlighting */
-  @Input('disabled') set disableAnimation(value: boolean) { this.disabled = coerceBooleanProperty(value); }
+  @Input('disabled') set disableHighlight(value: boolean) { this.disabled = coerceBooleanProperty(value); }
   public disabled = false;
 
   /** Selects the language */
