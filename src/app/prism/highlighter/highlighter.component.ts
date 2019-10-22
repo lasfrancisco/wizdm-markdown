@@ -1,9 +1,11 @@
-import { Component, Input, HostBinding } from '@angular/core';
+import { Component, Input, HostBinding, ViewEncapsulation } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 @Component({
   selector: 'pre[wm-prism]',
-  templateUrl: './highlighter.component.html'
+  templateUrl: './highlighter.component.html',
+  styleUrls: ['./highlighter.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 /** Perform code hilighting by processing an input text to be rendered into an angular template 
  * Using prism as tokenizer @see {https://github.com/PrismJS/prism} */
