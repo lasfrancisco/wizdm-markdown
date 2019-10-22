@@ -24,7 +24,7 @@ import { MarkdownModule } from './markdown/markdown.module';
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
-    MarkdownModule
+    MarkdownModule.init({ commonmark: true, footnotes: true, prism: true })
   ],
   
   declarations: [ 

@@ -34,14 +34,6 @@
       </tbody>
     </table>
 
-    <!-- Code Block -->
-    <!--pre *ngSwitchCase="'code'" [attr.data-line]="pos(child)">
-      <code>{{ child.value }}</code>
-    </pre-->
-
-    <!-- Code Block w/ syntax highlighting -->
-    <pre *ngSwitchCase="'code'" [attr.data-line]="pos(child)" [language]="child.lang" [wm-prism]="child.value"></pre>
-
     <!-- Thematic Break -->
     <hr *ngSwitchCase="'thematicBreak'" [attr.data-line]="pos(child)"/>
 
@@ -56,6 +48,21 @@
 
     <!-- Right aligned block - Align plugin -->
     <span *ngSwitchCase="'rightAligned'" align="right" [wm-block]="child"></span>
+
+    <!-- Code Block -->
+    <ng-container *ngSwitchCase="'code'">
+
+      <!-- Use syntax highlighting w/ Prism when enabled -->
+      <pre *ngIf="usePrism; else plainCode" [attr.data-line]="pos(child)" [language]="child.lang" [wm-prism]="child.value"></pre>
+
+      <!-- Renders the plain code otherwise -->
+      <ng-template #plainCode>
+        <pre [attr.data-line]="pos(child)">
+          <code>{{ child.value }}</code>
+        </pre>
+      </ng-template>
+
+    </ng-container>
 
   </ng-container>
     

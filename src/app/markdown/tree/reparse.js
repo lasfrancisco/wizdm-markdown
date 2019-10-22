@@ -20,22 +20,20 @@
 
   // Imports the UNIFIED and REMARK modules
 	const unified = require('unified');
-	const parse = require('remark-parse');
+	const parse   = require('remark-parse');
 	const subsup  = require('remark-sub-super');
-  const align = require('remark-align');
-	
-  // Defines the parsing options
-	const options = { 
-	  commonmark : true,
-	  pedantic   : true,
-	  footnotes  : true
-	};
+  const align   = require('remark-align');
 
-  // Exports the markdown parser including align and subsup plugins
-	module.exports = unified()
-	  .use(parse, options)
-	  .use(subsup)
-    .use(align)
-	  .freeze();
+  // Setupd the markdown parser configured with the given options @see {https://github.com/remarkjs/remark/tree/master/packages/remark-parse}
+  function setupParser(options) {
+    return unified()
+  	  .use(parse, options)
+  	  .use(subsup)
+      .use(align)
+  	  .freeze();
+  }
+
+  // Exports the parser setup function
+	module.exports = { setupParser }
   
 }(window));
