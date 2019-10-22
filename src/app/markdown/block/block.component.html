@@ -34,11 +34,13 @@
       </tbody>
     </table>
 
-    <!-- Code -->
-    <pre *ngSwitchCase="'code'" [attr.data-line]="pos(child)">
-      <code [wm-prism]="child.value" [language]="child.lang"></code>
-      <!--code>{{ child.value }}</code-->
-    </pre>
+    <!-- Code Block -->
+    <!--pre *ngSwitchCase="'code'" [attr.data-line]="pos(child)">
+      <code>{{ child.value }}</code>
+    </pre-->
+
+    <!-- Code Block w/ syntax highlighting -->
+    <pre *ngSwitchCase="'code'" [attr.data-line]="pos(child)" [language]="child.lang" [wm-prism]="child.value"></pre>
 
     <!-- Thematic Break -->
     <hr *ngSwitchCase="'thematicBreak'" [attr.data-line]="pos(child)"/>
