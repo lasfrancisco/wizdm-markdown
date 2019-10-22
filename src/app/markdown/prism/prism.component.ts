@@ -2,19 +2,19 @@ import { Component, OnInit, OnDestroy, Input, HostBinding } from '@angular/core'
 import * as prism from 'prismjs';
 
 @Component({ 
-  selector: '[wm-highlight]', 
-  templateUrl: './highlight.component.html',
-  host: { 'class' : 'wm-markdown-highlight language-css' }
+  selector: '[wm-prism]', 
+  templateUrl: './prism.component.html',
+  host: { 'class' : 'wm-prism language-css' }
 }) 
 /** Perform code hilighting by processing an input text to be rendered into an angular template 
  * Using prism as tokenizer @see {https://github.com/PrismJS/prism} */
-export class CodeHighlighter { 
+export class PrismHiglighther { 
 
   public tokens: any;
 
   @Input('language') language: string;
   
-  @Input('wm-highlight') set highlight(source: string|any[]) {
+  @Input('wm-prism') set highlight(source: string|any[]) {
     // Tokenizes the input string or pass along the already tokenized array
     this.tokens = !!source ? typeof source === 'string' ? this.tokenize(source) : source : [];
   }

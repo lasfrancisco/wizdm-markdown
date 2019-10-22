@@ -36,7 +36,7 @@
 
     <!-- Code -->
     <pre *ngSwitchCase="'code'" [attr.data-line]="pos(child)">
-      <code [wm-highlight]="child.value" [language]="child.lang"></code>
+      <code [wm-prism]="child.value" [language]="child.lang"></code>
       <!--code>{{ child.value }}</code-->
     </pre>
 

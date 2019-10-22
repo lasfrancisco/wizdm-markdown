@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MarkdownRoot } from './markdown.component';
 import { MarkdownBlock } from './block/block.component';
 import { MarkdownInline } from './inline/inline.component';
-import { CodeHighlighter } from './highlight/highlight.component';
+import { PrismHiglighther } from './prism/prism.component';
 
 @NgModule({
   imports: [ 
@@ -13,10 +13,11 @@ import { CodeHighlighter } from './highlight/highlight.component';
     MarkdownRoot,
     MarkdownInline,
     MarkdownBlock,
-    CodeHighlighter,
+    PrismHiglighther,
   ],
   exports: [
-    MarkdownRoot
+    MarkdownRoot,
+    PrismHiglighther
   ]
 })
 export class MarkdownModule { }
