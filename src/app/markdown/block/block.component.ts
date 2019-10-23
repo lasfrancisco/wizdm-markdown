@@ -15,6 +15,8 @@ export class MarkdownBlock {
   
   constructor(readonly tree: MarkdownTree) {}
 
+  get children() { return ("children" in this.node) ? this.node.children : [] }
+
   get highlight() { return !!this.tree.config && !!this.tree.config.prism; }
 
   // Table of content anchor helper

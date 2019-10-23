@@ -11,9 +11,11 @@ import { MarkdownRoot } from '../markdown.component';
 })
 export class MarkdownInline { 
 
-  constructor(readonly tree: MarkdownTree, private root: MarkdownRoot) {}
-
   @Input('wm-inline') node: mdPhrasingContent;
+
+  constructor(readonly tree: MarkdownTree, private root: MarkdownRoot) {}
+  
+  get children() { return ("children" in this.node) ? this.node.children : [] }
 
   // Text rendering helper
   public _T(value: string) { return value || ''; }
