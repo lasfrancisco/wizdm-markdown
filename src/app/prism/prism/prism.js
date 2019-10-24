@@ -7,10 +7,11 @@
 
 (function(global){
   'use strict';
-  // Requires Prism
+  // Forces prism to run in manual mode
+  global.Prism = (global.Prism || {});
+  global.Prism.manual = true;
+  // Requires Prism safely now
   const prism = require('prismjs');
-  // Forces manual mode
-  prism.manual = true;
   // Exports the module
 	module.exports = { 
     prism
