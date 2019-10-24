@@ -12,11 +12,9 @@
   global.Prism.manual = true;
   // Requires Prism safely now
   const prism = require('prismjs');
-
-  //const components = require('prismjs/components');
   // Exports the module
 	module.exports = { 
-    prism//,components
+    prism
   };
   
 }(window));
