@@ -1,14 +1,19 @@
 import { Component, Input } from '@angular/core';
 import { prism } from './prism';
 
+export interface Token {
+  type: string;
+  content: string|Token[];
+};
+
 @Component({ 
   selector: ':not(pre)[wm-prism]', 
   templateUrl: './tokenizer.component.html'
 }) 
 export class PrismTokenizer { 
 
+  public tokens: (string|Token)[];
   private grammar: any;
-  public tokens: any;
 
   /** Selects the most appropriate grammar according to the language */
   @Input() set language(language: string) {
@@ -16,14 +21,14 @@ export class PrismTokenizer {
   }
 
   /** Tokenizes the input string or pass along the already tokenized array */
-  @Input('wm-prism') set highlight(source: string|any[]) {
+  @Input('wm-prism') set highlight(source: string|Token[]) {
     this.tokens = typeof(source) === 'string' ? this.tokenize(source) : source;
   }
 
   /** Helper for rendering strings */
-  isString(token: any): boolean { return typeof(token) === 'string'; } 
+  isString(token: string|Token): boolean { return typeof(token) === 'string'; } 
 
-  private tokenize(source: string): any[] {
+  private tokenize(source: string): (string|Token)[] {
     // Skips invalid source
     if(!source) { return ['']; }
     // Returns the full text as a single token when no grammar is defined
