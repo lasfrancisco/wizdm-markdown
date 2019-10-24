@@ -16,8 +16,7 @@
   //const components = require('prismjs/components');
   // Exports the module
 	module.exports = { 
-    prism,
-    //components
+    prism//,components
   };
   
 }(window));

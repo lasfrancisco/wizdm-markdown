@@ -14,9 +14,9 @@ import {
 import { AppComponent } from './app.component';
 import { MarkdownModule } from './markdown/markdown.module';
 
-// Includes additional languages for syntax highlighting right before importing MarkdownModule (depending on PrismModule)
-//import 'prismjs/components/prism-c';
-//import 'prismjs/components/prism-cpp';
+// Includes additional languages for syntax highlighting right after importing MarkdownModule (depending on PrismModule)
+import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-cpp';
 //import 'prismjs/components/prism-csharp';
 //import 'prismjs/components/prism-typescript'
 
