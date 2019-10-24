@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { prism } from './prismjs';
+import { prism } from './prism';
 
 @Component({ 
   selector: ':not(pre)[wm-prism]', 
