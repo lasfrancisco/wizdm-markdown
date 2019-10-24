@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import * as prism from 'prismjs';
+import { Component, Input } from '@angular/core';
+import { prism } from '../prismjs';
 
 @Component({ 
   selector: ':not(pre)[wm-prism]', 
