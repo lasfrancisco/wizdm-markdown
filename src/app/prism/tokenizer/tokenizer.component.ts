@@ -18,7 +18,8 @@ export class PrismTokenizer {
 
   /** Tokenizes the input string or pass along the already tokenized array */
   @Input('wm-prism') set highlight(source: string|any[]) {
-    this.tokens = this.prism.tokenize(source);
+
+    this.tokens = typeof(source) === 'string' ? this.prism.tokenize(source) : source;
   }
 
   /** Helper for rendering strings */

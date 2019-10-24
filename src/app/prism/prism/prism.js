@@ -13,11 +13,11 @@
   // Requires Prism safely now
   const prism = require('prismjs');
 
-  const components = require('prismjs/components');
+  //const components = require('prismjs/components');
   // Exports the module
 	module.exports = { 
     prism,
-    components
+    //components
   };
   
 }(window));

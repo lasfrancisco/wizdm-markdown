@@ -10,10 +10,10 @@ export class PrismService {
     //console.log(components);
   }
 
-  get languages() { return prism.languages; }
+  //get languages() { return prism.languages; }
 
   public selectLanguage(language: string) {
-    this.grammar = !!language ? prism.languages[language] : null;
+    this.grammar = !!language ? prism.languages[language] : undefined;
   }
 
   public tokenize(source: string): any[] {
