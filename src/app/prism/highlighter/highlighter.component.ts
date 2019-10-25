@@ -1,21 +1,20 @@
-import { Component, Input, HostBinding, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 @Component({
   selector: 'pre[wm-prism]',
   templateUrl: './highlighter.component.html',
   styleUrls: ['./highlighter.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  host: { 
+    'class': 'wm-prism',
+    '[class.language-none]': '!disabled' 
+  }
 })
 /** Perform code hilighting by processing an input text to be rendered into an angular template 
  * Using prism as tokenizer @see {https://github.com/PrismJS/prism} */
 export class PrismHighlighter { 
 
-  /** Applies the proper classes to the host <pre> element */
-  @HostBinding('class') get clazz() {
-    return `wm-prism${this.disabled ? '' : ' language-none'}`;
-  }
-  
   /** Disables the highlighting */
   @Input('disabled') set disableHighlight(value: boolean) { this.disabled = coerceBooleanProperty(value); }
   public disabled = false;
