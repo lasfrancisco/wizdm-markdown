@@ -1,5 +1,5 @@
 import { Component, Input, Inject } from '@angular/core';
-import { PRISM, Prism, Grammar, Token } from './prism';
+import { PRISM, Prism, Grammar, Token } from './prism.injectable';
 
 @Component({ 
   selector: ':not(pre)[wm-prism]', 
