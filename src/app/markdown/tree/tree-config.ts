@@ -1,4 +1,5 @@
-import { InjectionToken } from '@angular/core';
+import { InjectionToken, inject } from '@angular/core';
+declare function require(name:string);
 
 export interface MarkdownConfig {
   // From remark-parse @see {https://github.com/remarkjs/remark/tree/master/packages/remark-parse}

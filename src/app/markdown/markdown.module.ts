@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, Inject, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MarkdownRoot } from './markdown.component';
 import { MarkdownBlock } from './block/block.component';
