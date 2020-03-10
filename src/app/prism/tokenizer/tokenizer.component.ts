@@ -19,7 +19,6 @@ export class PrismTokenizer {
 
   /** Tokenizes the input string or pass along the already tokenized array */
   @Input('wm-prism') set highlight(source: string|Token[]) {
-    
     this.tokens = typeof(source) === 'string' ? this.tokenize(source) : source;
   }
 
@@ -27,7 +26,21 @@ export class PrismTokenizer {
   isString(token: string|Token): boolean { return typeof(token) === 'string'; }
 
   /** Helper for rendering tokens */
-  tokenClass(token: Token): string { return `token ${token.type || ''}`; } 
+  tokenClass(token: Token): string {
+    // Returns the basic token class + type and appends the aliases, if any 
+    return token ? ('token ' + (token.type || '') + this.tokenAliases(token)) : '';    
+  } 
+
+  private tokenAliases(token: Token): string {
+    // Skips when no aliases
+    if(!token.alias) { return ''; }
+    // Appends the multiple aliases
+    if(token.alias instanceof Array) {
+      return token.alias.reduce( (c, alias) => c + ' ' + alias,'');
+    }
+    // Appends the single alias
+    return ' ' + token.alias;
+  }
 
   /** Tokenizer funcion */
   private tokenize(source: string): (string|Token)[] {
