@@ -10,14 +10,13 @@ import {
   MatToolbarModule,
   MatDividerModule
 } from '@angular/material';
-
-import { AppComponent } from './app.component';
 import { MarkdownModule } from './markdown/markdown.module';
 import { 
   PrismCppModule,
   PrismTsModule,
   PrismScssModule 
 } from './prism/languages';
+import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [   
