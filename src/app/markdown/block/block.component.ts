@@ -1,4 +1,5 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, Inject, ViewEncapsulation } from '@angular/core';
+import { MarkdownConfig, mdConfigToken } from '../markdown.config';
 import { mdContent, mdHeading } from '../tree/tree-types';
 import { MarkdownTree } from '../tree/tree.service';
 
@@ -13,11 +14,16 @@ export class MarkdownBlock {
 
   @Input('wm-block') node: mdContent;
   
-  constructor(readonly tree: MarkdownTree) {}
+  constructor(readonly tree: MarkdownTree, @Inject(mdConfigToken) private config: MarkdownConfig) {
+    console.log(this.config);
+  }
 
   get children() { return ("children" in this.node) ? this.node.children : [] }
 
-  get highlight() { return !!this.tree.config && !!this.tree.config.prism; }
+  get highlight() { 
+    
+    console.log(this.config);
+    return (this.config && this.config.prism) || false; }
 
   // Table of content anchor helper
   public toc(heading: mdHeading): string {

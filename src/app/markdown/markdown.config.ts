@@ -1,6 +1,5 @@
-import { InjectionToken, inject } from '@angular/core';
-declare function require(name:string);
-
+import { InjectionToken } from '@angular/core';
+ 
 export interface MarkdownConfig {
   // From remark-parse @see {https://github.com/remarkjs/remark/tree/master/packages/remark-parse}
   gfm?        : boolean; // Github Flowered Markdown mode (default: true)
