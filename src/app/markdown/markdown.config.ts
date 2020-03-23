@@ -6,8 +6,6 @@ export interface MarkdownConfig {
   commonmark? : boolean; // Commonmark mode (default: false)
   pedantic?   : boolean; // Pedantic mode (default: false)
   footnotes?  : boolean; // Enable footnotes (default: false)
-  //--
-  prism?      : boolean;// Enable code syntax highlighting with Prism (default: false)
 };
 
 export const mdConfigToken = new InjectionToken<MarkdownConfig>('wizdm-markdown-config-token');
