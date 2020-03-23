@@ -13,15 +13,11 @@ import {
 
 import { AppComponent } from './app.component';
 import { MarkdownModule } from './markdown/markdown.module';
-import { PrismCppModule } from './prism/languages';
-import { PrismTsModule } from './prism/languages';
-import { PrismScssModule } from './prism/languages';
-
-// Includes additional languages for syntax highlighting right after importing MarkdownModule (depending on PrismModule)
-//import 'prismjs/components/prism-c';
-//import 'prismjs/components/prism-cpp';
-//import 'prismjs/components/prism-csharp';
-//import 'prismjs/components/prism-typescript'
+import { 
+  PrismCppModule,
+  PrismTsModule,
+  PrismScssModule 
+} from './prism/languages';
 
 @NgModule({
   imports: [   

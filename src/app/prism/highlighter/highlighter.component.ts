@@ -4,7 +4,6 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
 @Component({
   selector: 'pre[wm-prism]',
   templateUrl: './highlighter.component.html',
-  styleUrls: ['./highlighter.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: { 
     'class': 'wm-prism',
