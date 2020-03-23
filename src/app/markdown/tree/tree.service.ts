@@ -18,7 +18,7 @@ export class MarkdownTree {
   /** Parses the markdown source into an mdContent tree */
   public parse(source: string): mdRoot {
     // Parses the source into the mdContent tree
-    this.root = !!source ? this.reparse.parse(source) : [];
+    this.root = !!source ? this.reparse.parse(source) : {};
     // Extracts the definitions (links and images)
     this.defs = this.tops.filter(node => node.type === 'definition') as mdDefinition[];
     // Extracts the footnote definitions
