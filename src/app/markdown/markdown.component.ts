@@ -22,6 +22,8 @@ export class MarkdownRoot extends MarkdownBlock {
   @Input('wm-markdown') set parse(source: string|mdContent) {
     // Parses the source md file into an mdAST syntax tree
     this.node = typeof source === 'string' ? this.tree.parse(source) : source;
+
+    console.log(this.node);
   }
 
   /** Navigation event emitted when a link is clicked on */

@@ -3,6 +3,16 @@
 # **Wizdm markdown renderer experiment**
 <-
 
+```markdown
+# Title
+
+This is a text
+
+1. List
+1. List
+1. List
+```
+
 ## **Welcome**
 Welcome to wizdm playground on [stackblitz!](https://stackblitz.com/). This simple project shows how to possibly implement an [angular](https://angular.io/) based markdown renderer:  
 

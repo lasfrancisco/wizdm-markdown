@@ -10,7 +10,7 @@ import { filter, catchError, switchMap, startWith, debounceTime } from 'rxjs/ope
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit { 
+export class AppComponent { 
 
   readonly document$: Observable<string>;
   private editor$ = new Subject<string>();
@@ -24,11 +24,6 @@ export class AppComponent implements OnInit {
         debounceTime(500) 
       ))
     );
-  }
-
-  ngOnInit() {
-    // Registers font awesome among the available sets of icons for mat-icon component
-    this.icon.registerFontClassAlias('fontawesome', 'fa');
   }
 
   private loadDocument(path: string) {    
